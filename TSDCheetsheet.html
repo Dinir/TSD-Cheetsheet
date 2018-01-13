@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Platformed Single Bag T-spin Doubles</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+</body>
+
+<script>
+const imagePath = 'Openings/';
+
+const addType = (name, variations) => {
+	const divType = document.createElement("div");
+	const divName = document.createElement("div");
+	const divVariation = document.createElement("div");
+	const divVariationName = document.createElement("div");
+	const divVariationImg = document.createElement("img");
+	
+	divType.setAttribute("class", "type");
+	divName.setAttribute("class", "name");
+	divVariationName.setAttribute("class", "variation");
+	
+	divType.dataset.name = name;
+	divName.innerText = divType.dataset.name;
+
+	divType.appendChild(divName);
+	divVariation.appendChild(divVariationName);
+	divVariation.appendChild(divVariationImg);
+	
+	for(let i=0; i<variations.length; i++) {
+		divVariation.dataset.name = variations[i];
+		divVariationName.innerText = divVariation.dataset.name;
+		divVariationImg.src = imagePath + 
+			`${divType.dataset.name}-${divVariation.dataset.name}.png`;
+		divType.appendChild(divVariation.cloneNode(true));
+	}
+	
+	document.body.appendChild(divType);
+};
+
+addType("Albatross", ["Cradle", "Cornerstone"]);
+addType("Petrel", ["Single Gap", "Double Gap"]);
+addType("Flamingo", ["Cradle", "Cornerstone", "Long Platform", "Jagged Prop"]);
+addType("Pelican", ["Skateboard", "Corner Gap", "Center Gap", "Cradle"]);
+addType("Dodo", ["Dodo"]);
+</script>

@@ -1,0 +1,24 @@
+body {
+  font-size: 12px; }
+
+.type {
+  margin-bottom: .2em;
+  clear: left;
+  overflow: auto; }
+  .type .name {
+    font-weight: bolder; }
+  .type > div:nth-child(n+2) {
+    float: left;
+    margin-right: 9px; }
+
+.type {
+  padding-left: 1.4em;
+  margin-top: -1.2em; }
+  .type .name {
+    position: relative;
+    left: -.2em;
+    bottom: -5.5em;
+    transform: rotate(-90deg);
+    transform-origin: left bottom; }
+
+/*# sourceMappingURL=style.css.map */
